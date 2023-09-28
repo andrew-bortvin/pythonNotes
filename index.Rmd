@@ -1,5 +1,5 @@
 ---
-title: "Computational Approaches to Population Genetic"
+title: "Computational Approaches to Population Genetics"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
@@ -14,4 +14,4 @@ output:
 
 # Course Resources 
 
-This site offers code examples for the content covered in Computational Approaches to Population Genetic.   
+This site offers code examples for the content covered in Computational Approaches to Population Genetics.   
