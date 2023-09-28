@@ -1,13 +1,31 @@
-book_filename: "Course_Name"
+book_filename: "Computational Approaches to Population Genetics"
 chapter_name: "Chapter "
 repo: https://github.com/andrew-bortvin/pythonNotes
 rmd_files: ["index.Rmd",
-            "01-intro.Rmd",
-            "About.Rmd",
-            "References.Rmd"]
-new_session: yes
+            "bootcamp_rmd/pythonCheat.Rmd",
+            "bootcamp_rmd/variables.Rmd",
+            "bootcamp_rmd/math.Rmd",
+            "bootcamp_rmd/comparisons.Rmd",
+            "bootcamp_rmd/built-in_functions.Rmd",
+            "bootcamp_rmd/type_conversion.Rmd",
+            "bootcamp_rmd/string_methods.Rmd",
+            "bootcamp_rmd/lists.Rmd",
+            "bootcamp_rmd/for_loops.Rmd",
+            "bootcamp_rmd/modifyingListsWithLoops.Rmd",
+            "bootcamp_rmd/while.Rmd",
+            "bootcamp_rmd/if.Rmd",
+            "bootcamp_rmd/reading_in_data.Rmd",
+            "bootcamp_rmd/modules.Rmd",
+            "bootcamp_rmd/numpy.Rmd",
+            "bootcamp_rmd/plotting_with_matplotlib.Rmd",
+            "bootcamp_rmd/pd.Rmd",
+            "bootcamp_rmd/dictionaries.Rmd",
+            "bootcamp_rmd/03_Git.Rmd",
+            "About.Rmd"]
 delete_merged_file: true
+#new_session: yes
+#rmd_subdir: yes
 language:
   ui:
-    chapter_name: "Chapter"
+    chapter_name: ""
 output_dir: "docs"
