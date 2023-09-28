@@ -51,7 +51,7 @@ These credits are based on our [course contributors table guidelines](https://ww
 ##  collate  en_US.UTF-8                 
 ##  ctype    en_US.UTF-8                 
 ##  tz       Etc/UTC                     
-##  date     2023-05-24                  
+##  date     2023-09-28                  
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────
 ##  package     * version date       lib source                            
@@ -125,6 +125,7 @@ These credits are based on our [course contributors table guidelines](https://ww
 <!-- Fill out this table using these instructions: https://github.com/jhudsl/OTTR_Template/wiki/How-to-give-credits
 
 For JHU courses, You will need to add Ira as a credit:
+
 
 |Content Publisher|[Ira Gooding]|
 ...
