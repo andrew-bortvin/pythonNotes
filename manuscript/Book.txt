@@ -1,5 +1,0 @@
-1-Course-Resources.md
-2-Python-Cheat-Sheet.md
-3-Python.md
-4-Git.md
-Authors.md
