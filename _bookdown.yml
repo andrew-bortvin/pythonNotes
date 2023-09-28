@@ -1,6 +1,6 @@
 book_filename: "Course_Name"
 chapter_name: "Chapter "
-repo: https://github.com/jhudsl/OTTR_Template/
+repo: https://github.com/andrew-bortvin/pythonNotes
 rmd_files: ["index.Rmd",
             "01-intro.Rmd",
             "About.Rmd",
