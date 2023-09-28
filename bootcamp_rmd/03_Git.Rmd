@@ -52,4 +52,3 @@ While this class introduces GitHub in a simplified manner, real-world usage ofte
 
 If you're familiar with GitHub, feel free to continue your workflow, just keep your TA informed. If you're new but curious, let your TA know, and we'll explore potential workshops outside of class later in the semester.
 
-
