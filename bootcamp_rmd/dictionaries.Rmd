@@ -1,0 +1,109 @@
+```{r, include = FALSE}
+ottrpal::set_knitr_image_path()
+```
+
+## Dictionaries
+
+A dictionary is a way of storing data, associating each item in the dictionary with a name. The common example used to conceptualize this is a phone book - each name is associated with a phone number. 
+
+We can define a dictionary using the following syntax:
+
+```{r, engine='python', eval=FALSE}
+dictionaryName = {<key1> : <value1>, 
+                  <key2> : <value2>}
+```
+
+The `keys` in a dictionary are conventionally a string or an integer. The `values` can be most data types (lists, integers, floats, etc.).
+
+A simple creation of a dictionary: 
+
+```{r, engine='python'}
+codons = {'Phe' : ['UUG'], 
+          'Leu' : ['CUC']}
+          
+print(codons)
+```
+
+### Looking up values
+
+We can look up the values in a dictionary as such: 
+
+```{r, engine='python'}
+codons['Phe']
+```
+
+We can also do this by storing the key name as a variable: 
+
+```{r, engine='python'}
+myKey = 'Phe'
+codons[myKey]
+```
+
+### Adding to a dictionary 
+
+We add to a dictionary as such: 
+
+```{r, engine='python', eval=FALSE}
+<dictionary name>[<key>] = <value> 
+```
+
+If the key already exists, then you will **overwrite** the existing value: 
+
+```{r, engine='python'}
+print(codons['Leu'])
+codons['Leu'] = ['CUU']
+print(codons['Leu'])
+```
+
+If the key does not already exist in your dictionary, you will add a new key-value pair: 
+
+```{r, engine='python'}
+codons['Ala'] = ['GCC']
+print(codons)
+```
+
+Likewise, we can use this syntax to modify existing values: 
+
+```{r, engine='python'}
+print(codons['Leu'])
+codons['Leu'].append('CUG')
+print(codons['Leu'])
+```
+
+This takes the codon value for `Leu`, which is the list `['CUU']`. Then, we append the value `'CUG'`.
+
+### Looping through dictionaries
+
+We can get the `keys` of a dictionary using the method: `.keys()`:
+
+```{r, engine='python'}
+for i in codons.keys():
+  print(i)
+```
+
+We can do the same for value using `.values()`:
+
+```{r, engine='python'}
+for i in codons.values():
+  print(i)
+```
+
+We can use `.items()` to iterate through the keys and values together:
+
+```{r, engine='python'}
+for key, value in codons.items():
+  print(key, value)
+```
+
+Lastly, if we want the data returned by `.keys()`, `.values()`, and `.items()` stored as list, we can do: 
+
+```{r, engine='python'}
+dictionary_keys_list = list(codons.keys())
+print(dictionary_keys_list)
+```
+
+
+
+
+
+

@@ -1,0 +1,880 @@
+```{r, include = FALSE}
+ottrpal::set_knitr_image_path()
+```
+
+# Python 
+
+## Data Types
+
+**Integers** are whole numbers. For example:
+
+* `2`
+* `-3`
+* `0`
+
+**Floats** are numbers with a decimal point. For example: 
+
+* `1.2`
+* `-3.0`
+* `26/3` (evaluates to `8.666`)
+
+**Strings** are characters enclosed by single `'` or double `"` quotation marks. Any text enclosed by quotes will be treated as a string.
+
+* `"My Grandpa's deck has no pathetic cards"`
+* `'85.3'`
+
+Note the second example – `85.3` is a float; `'85.3'` is a string.
+
+**Booleans** have two possible values: `True` and `False`. These can also be expressed as `1` (true) or `0` (false).
+
+## Variables
+
+Variables are assigned using the `=` sign:
+
+```
+variable_name = value
+```
+
+For example:
+
+* `composer = "buxtehude"`
+* `year = 1637`
+
+The variable name can be almost anything. Here are some general rules to consider when naming a variable:
+
+* The name must start with a letter or underscore
+* The name can only consist of letters, numbers, or underscores
+* Variables are case sensitive (i.e. Python interprets `my_number`, `MY_NUMBER`, and `My_Number` as different variables)
+* Python has a set of "reserved words" that cannot be used as variable names. These are words that already have a set meaning in Python, such as `True`, `False`, `for`, and `if`. A full list can be found [**here**](https://www.programiz.com/python-programming/keywords-identifier).
+
+## Math
+
+### Mathematical operations 
+
+A lot of mathematical operations in Python are straightforward. Here are some of the basic operations we can perform:
+
+* `+` and `-`: addition and subtraction
+* `*` and `/`: multiplication and division
+* `**`: exponentials
+
+We can perform mathematical operations on values directly:
+
+```{r, engine="python"}
+print(2 + 3)
+```
+
+Or we can operate on variables: 
+
+```{r, engine="python"}
+myValue = 4 
+print(myValue**2)
+```
+
+Python will automatically convert integers to floats when appropriate: 
+
+```{r, engine="python"}
+print(3 + 2.2)
+```
+
+We can save the output of an expression as a variable:
+
+```{r, engine="python"}
+my_product = 2 * 10
+print(my_product)
+```
+
+And likewise we can perform mathematical operations on variables, if these variables store numeric data:
+
+```{r, engine="python"}
+number1 = 7
+print(number1 / 2)
+```
+
+### Order of operations
+
+Python follows the usual mathematical order of operations. And like in math, we can use parentheses `()` to enforce a specific order.
+
+```{r, engine="python"}
+print(2 * (2 + 2))
+```
+
+## Comparisons 
+
+In Python, comparisons will always return a Boolean, i.e. either `True` or `False.` We can use the following syntax to compare values:
+
+* `<` and `>`: greater than, less than
+* `<=` and `>=`: greater than or equal to, less than or equal to
+
+For example:
+
+```{r, engine="python"}
+print(5.3 < 17)
+print(4. >= (8/2))
+```
+
+* `==` checks if two values are equal. `!=` checks if two values are different.
+
+```{r, engine="python"}
+print(2 == (10 - 8))
+```
+
+Note that a single equals sign `=` is used to assign values. However, a double equals sign `==` is used to compare values.
+
+* `var1 = 3` sets the variable `var1` to `3`
+* `var1 == 3` checks whether the value of `var1` is `3`
+
+## Built-In Functions and Methods 
+
+### Functions
+
+A **function** is a block of code that performs a task. Python comes with a substantial set of pre-written functions. 
+
+***Text on how a function is formulated - name, parentheses, optionally arguments*** 
+
+***Is it worth talking about named arguments or positional arguments. Be introspective about this***
+
+For example, the `print()` function displays ***FINISH ME***
+
+***OTHER Built-In FUNCTIONS***'
+
+### Methods
+
+Every data type that we use in Python (strings, integers, etc.) is associated with a set of functions unique to the data type. These functions are called **methods**.
+
+The syntax for using a method is:
+
+```
+<objectName>.<methodName>()
+```
+
+#### Example
+
+The string method `.upper()` is used to convert a string into uppercase letters. We can use it either directly on the string itself:
+
+```{r, engine="python"}
+"peppa".upper()
+```
+
+or by operating on a variable:
+
+```{r, engine="python"}
+pig = "peppa"
+pig.upper()
+```
+
+#### Modifying objects
+
+Using a method may or not modify the object you run it on. For example, the `.upper()` method shows you the uppercase version of a string but **does not** modify the actual object that you are operating on. Observe the following code block:
+
+```{r, engine="python", eval = FALSE}
+pig = "peppa"
+pig.upper()
+print(pig)
+```
+
+```
+## peppa
+```
+
+`pig` has not been updated. To actually save the result of `.upper()`, we have to assign it to a variable: 
+
+```{r, engine="python"}
+pig_caps = pig.upper()
+print(pig_caps)
+```
+
+Some methods **do** modify underlying variables. For example, the list `.append()` method (which we will learn about later) *does* change the list if operates on: 
+
+```{r, engine="python"}
+myList = []
+print(myList)
+myList.append('apple')
+print(myList)
+```
+
+`myList` is altered by `myList.append('apple')`. There's no need to type something like `myList = myList.append('apple')` - this would in fact be an error. Whether methods modify the objects they operate on is something you'll have to keep track of on a case-by-case basis as you learn new methods. 
+
+## Type Conversion
+
+Sometimes, data can be converted from one type to another. 
+
+* `float()` - converts integers and strings (when appropriate) to floats
+
+```{r, engine='python', eval=FALSE}
+print(float(3))
+print(float("2.57"))
+```
+
+```{r, engine='python', eval=FALSE}
+3.0
+2.57
+```
+
+* `int()`converts floats and strings into integers. Note that this function always rounds down if necessary. An exception here: `int()` **does not** allow you to convert a string with a decimal point into an integer - `int("3.62")` will throw an error.  
+
+```{r, engine='python', eval=FALSE}
+print(int('3'))
+print(int(2.57))
+```
+
+```{r, engine='python', eval=FALSE}
+3
+2
+```
+
+Note that for the above functions, it is not always possible to do convert data into a different type. In particular, strings with non-numeric characters cause problems - `int("Dachshund")` will not work. 
+
+* `str()` converts all other data types into strings. 
+
+```{r, engine='python', eval=FALSE}
+print(str(3))
+print(str(2.57))
+print(str(True))
+```
+
+```{r, engine='python', eval=FALSE}
+'3'
+'2.57'
+'True'
+```
+
+A special case of type conversions comes with `booleans`. Numeric values are **automatically converted** into `booleans`. `0` is equivalent to `False`. **All** non-zero numeric values are equivalent to `True`. Likewise, empty strings (`''`) convert to `False`. All non-empty strings (inlcuding the string `'False'`) convert to `True`.
+
+## String Methods
+
+### `.upper()` and `.lower()`
+
+The `.upper()` and `.lower()` methods take a string and convert it to uppercase and lowercase, respectively.
+
+```{r, engine='python'}
+print("out on the wily, windy moors".upper())
+```
+
+```{r, engine='python'}
+aria = "Piangerò La Sorte Mia"
+print(aria.lower())
+```
+
+### .split()
+
+The `.split()` method takes a string and splits it into a list, dividing the list on a **delimiter** (i.e., separator). The delimiter is provided as an argument:
+
+```{r, engine='python'}
+print("Newt eye, frog toe".split(','))
+```
+
+If no argument is provided, then the string is split on whitespace (that is, it is split whenever a space or tab is encountered).
+
+```{r, engine='python'}
+print("Eye of newt    and toe of frog".split())
+```
+
+### .join()
+
+The `.join()` method is the inverse of `.split()`: converts a list into a string, with list elements separated by a delimiter. The general syntax is:
+
+```
+"<delimiter>".join(<list>)
+```
+
+For example:
+
+```{r, engine='python'}
+" ".join(["I", "found", "a", "fox", "caught", "by", "dogs"])
+```
+
+If we do not provide a delimiter, then the strings are directly concatenated: 
+
+```{r, engine='python'}
+"".join(["I", "found", "a", "fox", "caught", "by", "dogs"])
+```
+
+### .rstrip(), .lstrip(), .strip()
+
+These three methods remove unwanted characters on the right, left, or both sides of a string. You can provide the characters you want to remove as an argument:
+
+```{r, engine='python'}
+"ricercar........,,,,,,".rstrip(",.")
+```
+
+Without an argument, the methods remove spaces: 
+
+```{r, engine='python'}
+"          ricercar ".lstrip()
+```
+
+Note that in the above example we strip the spaces to the left of the main text, but we **do not** remove the spaces from the middle or right end of the text.
+
+## Lists 
+
+Lists allow us to store multiple objects together.
+
+A list is a sequential group of variables, denoted in Python by square brackets `[]`, with individual entries separated by commas. A few of the neat properties of lists are:
+
+* **Ordered**: The list `[1, 5, 3, 7]` will always store those numbers in the same order.
+* **Mixed data types**: `["mercury", 13, 5.3, False]` is a valid list which contains every data type we've seen so far.
+* **Can contain other lists**: `[[2, 3], "sulfur", 12, 18]`
+* **Can contain repeat values**: `["tomato", "tomato", "tomato", "sulfur"]`
+
+### Indexing
+
+What if we want to extract a specific value from a list? We can use **indexing**. To index in Python, we use the following syntax:
+
+```
+variable_name[index]
+```
+
+where `index` is the number of the item we wish to extract.
+
+```{r, engine="python"}
+alchemists = ["Zosimos", "Oresme", "Flamel", "pseudo-Aristotle"]
+print(alchemists[1])
+```
+
+Notice that when we printed the item at position 1, we printed out the _second_ entry in `alchemists`. This is because in Python, **indexing begins at 0**. To print out the first entry, we would use `alchemists[0]`.
+
+A couple interesting things we can do with indexing:
+
+* To print multiple consecutive items, we can provide two numbers separated by a colon `:`.
+
+```{r, engine="python"}
+print(alchemists[0:2])
+```
+
+Note that the first number is **inclusive** and the second number is **exclusive**: we include the item at position 0 (`'Zosimos'`), but not the item at position 2 (`'Flamel'`).
+
+* We can index in reverse. To index from the end of a list, we use negative numbers.
+
+```{r, engine="python", eval=FALSE}
+print(alchemists[-1])
+```
+```{r, engine="python", echo=FALSE}
+print(alchemists[-1])
+```
+
+***
+<details> <summary> Nested lists </summary>
+
+How would we extract the number `3` from the list below?
+
+```{r, engine="python"}
+my_list = [1, 2, [3, 4], 5]
+```
+
+First, we extract the `[3, 4]` list. This is the third item of the outer list, so it is at position 2 (remember, indexing in Python starts at 0). So we can access the interior list with `my_list[2]`:
+
+```{r, engine="python"}
+print(my_list[2])
+```
+
+Within the interior list, `3` is the first item, so it is at position 0. It can be accessed with the syntax `my_list[2][0]`:
+
+```{r, engine="python", eval=FALSE}
+print(my_list[2][0])
+```
+```{r, engine="python", echo=FALSE}
+print(my_list[2][0])
+```
+
+</details>
+***
+
+#### Indexing Strings
+
+We can also apply indexing to extract substrings from within a string. This is done identically to how we index a list:
+
+```{r, engine='python'}
+creature = 'stingray'
+print(creature[0:5])
+```
+
+### Adding to lists
+
+Finally, we can add entries to the end of a list. We do this with the `append()` method, which is used with the following syntax:
+
+```
+list_name.append(item)
+```
+
+For example:
+
+```{r, engine="python"}
+florilegium = ['marigold', 'thistle', 'wormwood']
+florilegium.append('tansy')
+print(florilegium)
+```
+
+## For Loops 
+
+In Python, we will often want to perform an action more than once. For example, if we have a list, we might want to do the same operatation on every item within the list.
+
+One way to do this is to use a **for loop**, which is structured like this:
+
+```
+for <temporary_variable> in <thing to loop through>:
+    {do something}
+```
+
+For example:
+
+```{r, engine='python'}
+stations = ["Oddity", "Londres", "Cherry", "Swedish"]
+
+for i in stations:
+  print(i)
+```
+
+### For loop walkthrough
+
+Here is how the loop works:
+
+```
+for i in stations:
+```
+
+In this line, we:
+
+* Define the temporary variable `i`. The name of this variable is arbitrary.
+* We say that we are looping through `stations`.
+
+In the first iteration of the for loop, `i` takes on the value of the first item in `stations` (`"Oddity"`). Now we perform all of the indented code, which here is just a `print()` statement.
+
+In the second iteration of the for loop, we set the value of `i` to the second entry in `stations` (`"Londres"`). We execute all of the indented code, printing out `"Londres"`.
+
+We continue on doing this until there is nothing left in `stations`.
+
+In this example, there was a single line in the body of the loop, but a for loop can be arbitrarily long. Here is a longer example:
+
+```{r, engine='python'}
+my_list = [1, 4, 6, 9, 10, 2]
+
+for i in my_list:
+  i = i + 3
+  i = i ** 2
+  print(i)
+```
+
+### Repeating an action `n` times
+
+We can also use a for loop to perform an action a set number of times, even when we don’t have a list to loop through. To do so, we can use the `range()` function. We'll use this function a ton throughout the course.
+
+`range(<n>)`, where `n` is a single integer, generates a sequence of numbers from `0` to `n` (not including `n` itself). So to run a function 3 times, we would provide the for loop with `range(3)` (which generates the list `[0, 1, 2]`).
+
+```{r, engine='python'}
+for i in range(3):
+  print(i)
+```
+
+So far, the body of our for loop has always referenced the temporary variable `i`. We can also use a for loop to run a block of code repeatedly without actually manipulating `i`:
+
+```{r, engine='python'}
+for i in range(3):
+  print("All work and no play")
+```
+
+## Reading in Data
+
+When working in Python, we often want to import data from an external file or, conversely, write our data to a file. To interact with external data objects, we use the `open()` function. This function takes two arguments: the `name` of the file we want to work with, and the `mode` that we want to interact with this file. 
+
+The common modes we use are: 
+
+* `r` - Read. This allows us to import data from an external file into python.
+* `w` - Write. This allows us to write our data to a file. If a file with this name already exists, operating in `w` mode **will overwrite existing file contents**.
+* `a` - Append. This allows us to write our data to a file. If a file with this name already exists, operating in `a` mode will **add to existing file contents**.
+
+To open a file with the name `insects.txt`, for reading in file contents, we would therefore use the syntax: 
+
+```{r, engine='python'}
+f = open('insects.txt', 'r')
+```
+
+### Parsing a file
+
+If we try to `print()` f, we get the following output: `<_io.TextIOWrapper name='insects.txt' mode='r' encoding='UTF-8'>`
+
+This is because we have opened the file and saved it as a variable, but we haven't actually read through and manipulated the data which it contains. We have two main ways of doing this in base Python: 
+
+#### 1. Parsing with a `for` loop
+
+One way to look through a file's contents line by line is to use a `for` loop. We can loop through a file with the syntax:
+
+```{r, engine='python'}
+for line in f:
+  print(line)
+```
+
+As it turns out, at the end of each line, there is a special end of line character, `\n`. To just read in the data without the return character, we can use `.strip()`:
+
+```{r, engine='python'}
+for line in f:
+  print(line.strip('\n'))
+```
+
+#### 2. Parsing with `readlines()`
+
+`readlines()` is a method that allows us to read through the entire file all at once, returning file contents as a list:
+
+```{r, engine='python', echo=FALSE}
+f = open('insects.txt', 'r')
+```
+
+```{r, engine='python', echo=FALSE}
+print(f.readlines())
+```
+
+This is more concise than a for loop, but all lines are read in without the manipulations that we can perform line-by-line in our loop.
+
+#### Closing files
+
+We can close a file with the `.close()` method. To close `insects.txt` (previously saved as the variable `f`), we would run:
+
+```{r, engine='python', echo=FALSE}
+f.close()
+```
+
+Once the file is closed, we cannot read it or write to it without opening it again. 
+
+## Modules 
+
+Often, we need to make use of functions beyond the basic ones in Python. To do this, we can import a **module**, or a collection of pre-written functions. A module is imported with the following syntax:
+
+```
+import <module name>
+```
+
+For example, to import the popular plotting module Matplotlib, we write:
+
+```{r, engine='python', eval=FALSE}
+import matplotlib.pyplot
+```
+
+### Module functions
+
+To use a function from Matplotlib, we need to reference both the package name and the function name, with the general syntax:
+
+```
+moduleName.functionName()
+```
+
+To use Matplotlib's `show()` function, we would write:
+
+```{r, engine='python', eval=FALSE}
+matplotlib.pyplot.show()
+```
+
+### Abbreviating module names
+
+What if you don't want to write out `matplotlib.pyplot` every time you run a Matplotlib function? To simplify this, we can give our modules a shorthand name. For example:
+
+```{r, engine='python', eval=FALSE}
+import matplotlib.pyplot as plt
+```
+
+Now, instead of writing out `matplotlib.pyplot`, we can just write `plt`. The previous `matplotlib.pyplot.show()` command is shortened to:
+
+```{r, engine='python', eval=FALSE}
+plt.show()
+```
+
+## Numpy 
+
+Numpy is a Python library used for manipulating arrays and performing mathematical operations on matrices. For concision, we will import the `numpy` module with the name `np`, as such:
+
+```{r, engine='python', eval=FALSE}
+import numpy as np
+```
+
+### Reading in data
+
+The function `np.loadtxt()` is used to read in text data. The most basic way to run `np.loadtxt()` is:
+
+```{r, engine='python', eval=FALSE}
+np.loadtxt(<fname>)
+```
+
+Consider a hypothetical comma-delimited file `numbers.csv`. The most basic way of reading it in is to run `np.loadtxt('numbers.csv')`. However, when we read in data, we typically want to store it in memory for further manipulation, so we usually use `np.loadtxt()` in conjunction with variable assignment: 
+
+```{r, engine='python', eval = FALSE}
+myNumbers = np.loadtxt('numbers.csv')
+```
+
+However, with a comma-delimited file as input this is likely to cause an error - Python has no way of knowing that elements in your file are separated by a space and will throw an error because something like "1,2,3" cannot be interpreted as a single numeric value. To tell Python that our data is comma-delimited, we can use the **optional argument**, `delimiter`: 
+
+```{r, engine='python', eval=FALSE}
+myNumbers = np.loadtxt('numbers.csv', delimiter=',')
+```
+
+Now, each number is encoded as its own element:
+
+`array([1, 2, 3])`
+
+Notice that unlike the file name, we need to specify the name of this optional argument (`delimiter=`). Because the file name argument is mandatory, `numpy` always expects the first argument to be the filename. However, since there are many possible optional arguments that once can use, it is impossible to infer which optional argument is being referred to by position alone. For optional arguments, we **always need to specify their name**.
+
+`np.loadtxt()` has many useful optional arguments - for example `skiplines`, which allows the user to skip the first `n` lines of a file. A full list of the optional arguments to `np.loadtxt()` can be found [here](https://numpy.org/doc/stable/reference/generated/numpy.loadtxt.html) 
+
+### Indexing `numpy` arrays
+
+Within a `numpy` array, we often want to look at a specific element or set of elements. To do this, we use indexing. 
+
+First, we can see the total size of an array by looking at the array's `shape` attribute. An **attribute** is a property inherent to a specific data type; it is typically viewed with the following syntax: `print(<variableName>.<attributeName>)`. We can therefore look at the shape of our array as such: `print(myNumbers.shape)`. This returns the number of rows and columns, respectively: `(45, 12)` - 45 rows and 12 columns.
+
+#### Accessing Single Values
+
+To look within these rows and columns for specific values, we use indexing: 
+
+```{r, engine='python', eval=FALSE}
+dataName[<rowNumber>, <columnNumber>]
+```
+
+For example, to print the value in the fifth row and third column of `myNumbers`, we would write: 
+
+```{r, engine='python', eval=FALSE}
+print(myNumbers[4, 2])
+```
+
+Remember that in Python, we start counting at `0`.
+
+#### Accessing Multiple Values 
+
+To print multiple consecutive items, we can provide two numbers separated by a colon `:`.
+
+```{r, engine='python', eval=FALSE}
+print(myNumbers[2:4, 5:10])
+```
+
+Note that the first number is **inclusive** and the second number is **exclusive**: We will print the elements in rows 3 and 4 and not row 5. We will print the the elements in columns 6 through 10, and not in column 11.
+
+### Math in `numpy`
+
+Consider the numpy array, which is saved with the name `sequence`: 
+
+```
+[[1,2,3],
+[4,5,6]]
+```
+
+### Average, Standard Deviation, Maximum, Minimum
+
+To take the average of this array, we use the function `np.mean()`. `np.mean()` has one required argument, which is the name of the object you want to take the mean of. 
+
+Running this function on `sequence` will return `3.5`, which is indeed the average of all six elements: 
+
+```{r, engine='python', eval=FALSE}
+np.mean(sequence)
+```
+
+```{r, engine='python', eval=FALSE}
+3.5
+```
+
+Conveniently, we can also use this same function to calculate the averages across rows and columns, by invoking the optional `axis` argument. Setting `axis` equal to `0` will produce column means; setting `axis` to `1` will produce row means:
+
+```{r, engine='python', eval=FALSE}
+np.mean(sequence, axis=0)
+array([2.5, 3.5, 4.5])
+
+np.mean(sequence, axis=1)
+array([2., 5.])
+```
+
+To compute the standard deviation, we use the `np.std()`. As with `np.mean()`, we can provide the `axis` argument to calculate the standard deviation along rows or columns. 
+
+We can get the maximum and minimum values of a `numpy` array using the `np.max()` and `np.min()` functions, respectively. These can also take the `axis` argument to operate along rows and columns. 
+
+## Plotting with `matplotlib` 
+
+In this course, we will use the library Matplotlib for plotting. For concision, we will import the `matplotlib.pyplot` module with the name `plt`, as such:
+
+```{r, engine='python', eval=FALSE}
+import matplotlib.pyplot as plt
+```
+
+### Line and Scatter Plots - Walkthrough
+
+We can initialize a figure with the following line:
+
+```{r, engine='python', eval=FALSE}
+fig, ax = plt.subplots()
+```
+
+This initializes a figure (named `fig`) and a plot within the figure (named `ax`). Having separate variables for the figure and the plot within the figure may seem strange, but it will make it considerably easier to arrange and manipulate multiple subplots within a larger figure. At present, our figure is just an empty canvas: 
+
+<img src="img/emptyPlot.png" title="Empty Plot" alt="An initialized plot without anything added to it." style="display: block; margin: auto;" />
+
+#### Points and Lines
+
+Let's add to our subplot by plotting some data. I've stored the temperature in Fahrenheit in Baltimore, MD and Wommels, Netherlands for the next seven hours:
+
+```{r, engine='python'}
+hours = range(7)
+tempBaltimore = [74, 73, 72, 71, 75, 79, 87]
+tempWommels = [59, 60, 62, 65, 69, 72, 67]
+```
+
+To plot a set of points, we can use the `.scatter()` method. This function takes two mandatory arguments: a list of x coordinates and a list of y coordinates. We can plot the temperature in Baltimore as such: 
+
+```{r, engine='python', eval=FALSE}
+ax.scatter(hours, tempBaltimore)
+```
+
+We can display our plot by running the function `plt.show()`. Our plot will look like this: 
+
+<img src="img/baltimore.png" title="Baltimore temperatures" alt="A scatter plot of Baltimore temperatures." style="display: block; margin: auto;" />
+
+Note that the `.scatter()` method has a variety of optional arguments that can be used to configure the appearance of your points; we will often modify the color (`c`), size (`s`), and shape (`m`) of our points. A full list of options can be found [here](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html).
+
+To add a line, we use the `.plot()` method. Like `.scatter()`, this function takes as arguments lists of x and y positions, and allows for aesthetic customization with a variety of optional parameters. For more information on these options, look [here](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html). Our plotting code now looks like this: 
+
+```{r, engine='python', eval=FALSE}
+import matplotlib.pyplot as plt
+
+hours = range(7)
+tempBaltimore = [74, 73, 72, 71, 75, 79, 87]
+tempWommels = [59, 60, 62, 65, 69, 72, 67]
+
+
+fig, ax = plt.subplots()
+
+ax.scatter(hours, tempBaltimore)
+ax.plot(hours, tempBaltimore)
+plt.show()
+```
+
+and generates this image: 
+
+<img src="img/baltimoreLine.png" title="Baltimore temperatures - points and line" alt="Scatter and line plots of Baltimore temperatures." style="display: block; margin: auto;" />
+
+#### Multiple Sets of Data 
+
+To plot both Baltimore and Wommels, we simply add a second call to `.scatter()` and `.plot()`
+
+```{r, engine='python', eval=FALSE}
+fig, ax = plt.subplots()
+
+ax.scatter(hours, tempBaltimore)
+ax.plot(hours, tempBaltimore)
+
+ax.scatter(hours, tempWommels)
+ax.plot(hours, tempWommels)
+plt.show()
+```
+
+<img src="img/baltimoreWommels.png" title="Temperature in Baltimore and Wommels" alt="Scatter and line plots of Baltimore and Wommels temperatures." style="display: block; margin: auto;" />
+
+A couple things are interesting about this plot: 
+
+* The y axis scale adjusts automatically to fit in Wommels. 
+* The second time that we call the `.scatter()` and `.plot()` functions, they automatically plot in a new color. If we were to add a third set of points, they would again be in a new color. 
+
+#### Labels and Legends
+
+To an observer, our plot is a bit confusing because it is unclear which line represents Wommels and which line represents Baltimore. We could clarify this by adding a legend. There are two steps to doing this: 
+
+1. We need to use the optional `label` argument. This argument tells the interpreter how to label a line or set of points in the legend. For example, we can label a set of points as such: `ax.scatter(hours, tempBaltimore, label='Baltimore')`. In this example, we can label either the scatter plots or the line plots.
+2. Create a legend using the `.legend()` method.
+
+```{r, engine='python', eval=FALSE}
+fig, ax = plt.subplots()
+
+ax.scatter(hours, tempBaltimore, label='Baltimore')
+ax.plot(hours, tempBaltimore)
+
+ax.scatter(hours, tempWommels, label='Wommels')
+ax.plot(hours, tempWommels)
+ax.legend()
+plt.show()
+```
+
+<img src="img/labeledPlot.png" title="Temperature in Baltimore and Wommels" alt="Scatter and line plots of Baltimore and Wommels temperatures." style="display: block; margin: auto;" />
+
+#### Figure Aesthetics
+
+Now that our data is plotted, let's add some axis labels using the `.set_xlabel()` and `.set_ylabel()` methods:
+
+```{r, engine='python', eval=FALSE}
+ax.set_xlabel("Time (Hours)")
+ax.set_ylabel("Temperature (F)")
+```
+
+We can set a title as such:
+
+```{r, engine='python', eval=FALSE}
+ax.set_title('Temperature in Baltimore and Wommels')
+```
+
+If we wanted to set custom limits for our x and y limits, we can use the `set_xlim()` and `set_ylim()` methods: 
+
+```{r, engine='python', eval=FALSE}
+ax.set_ylim(50, 100)
+```
+
+Altogether, our final image looks like this: 
+
+<img src="img/finalPlot.png" title="Temperature in Baltimore and Wommels" alt="Scatter and line plots of Baltimore and Wommels temperatures." style="display: block; margin: auto;" />
+
+### Histograms 
+
+Histograms are a convenient way of visually displaying the overall distribution of a one-dimensional dataset. 
+
+I've found 25 towns worldwide named Baltimore. Here are their current temperature in Fahrenheit saved to a list:
+
+```{r, engine='python'}
+temperatureBaltimore = [69, 83, 82, 90, 77, 89, 82, 67, 59, 86, 74, 77, 58, 67, 62, 91, 73, 81, 67, 87, 61, 67, 61, 108, 112]
+```
+
+To generate a histogram, we use the `.hist()` method. By default, this method takes just one argument: the data that you wish to plot. 
+
+```{r, engine='python', eval=FALSE}
+fig, ax = plt.subplots()
+ax.hist(temperatureBaltimore)
+ax.set_xlabel('Temperature (F)')
+ax.set_ylabel('Frequency')
+ax.set_title('Current Temperature in Every Town Named Baltimore')
+plt.show()
+```
+
+<img src="img/allBaltimores.png" title="Temperature in all Baltimores" alt="Histogram of temperature in every town named Baltimore" style="display: block; margin: auto;" />
+
+One important argument for the `.hist()` method is `bins`, which allows us to set how many groups our data is divided into. The more bins there are, the fewer x values will be contained within a single bin. For example, plotting the Baltimore data with a larger number of bins: 
+
+```{r, engine='python', eval=FALSE}
+ax.hist(temperatureBaltimore, bins = 20)
+```
+
+<img src="img/allBaltimoresBins.png" title="Temperature in all Baltimores" alt="Histogram of temperature in every town named Baltimore" style="display: block; margin: auto;" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

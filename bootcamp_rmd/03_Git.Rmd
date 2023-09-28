@@ -1,0 +1,53 @@
+```{r, include = FALSE}
+ottrpal::set_knitr_image_path()
+```
+
+# Git
+
+### Introduction to Git and GitHub for Beginners
+
+Welcome to the world of version control and collaborative coding! Git and GitHub are powerful tools that allow you to manage your projects, track changes, and collaborate with others in a more organized and efficient way. Even if you've never coded before, understanding the basics of Git and GitHub can greatly benefit you as you explore the world of technology and collaboration.
+
+### What is Git?
+
+Imagine you're working on a group project where multiple people are making changes to a document. It can quickly become confusing to keep track of who made which changes and when. Git is like a time-traveling tool for your code. It tracks changes you make to your files, allowing you to go back to previous versions if needed. This is incredibly helpful for avoiding mistakes and experimenting with new ideas without fear of ruining your work.
+
+### What is GitHub?
+
+GitHub is a platform that works hand in hand with Git. Think of it as a place to store your code online, collaborate with others, and showcase your projects. It's like a social network for developers, where you can share your work, explore others' projects, and contribute to open-source projects. GitHub adds a layer of collaboration to Git by providing a centralized space for multiple people to work on the same codebase. You can read more [here](https://www.simplilearn.com/tutorials/git-tutorial/git-vs-github).  
+
+### Pipeline for this semester 
+In this class, we will introduce Git and GitHub in a straightforward and modular manner. Your primary use of GitHub will be to upload assignments and receive feedback from your teaching assistants (TAs).
+
+In broader contexts beyond this class, GitHub is used somewhat differently, often involving "branches" for development. While we won't delve into branches in this class, you can explore the "Learning More" section below or consult a TA if you're curious. If you have prior experience with GitHub, you're welcome to follow your established workflow, including branching and pull requests. Just inform your TA so they can support your chosen approach.
+
+#### Key Concepts:
+
+Repository (Repo): A repository is a project folder that contains all your code, files, and history of changes. It's where your work lives.
+
+Commit: A commit is a snapshot of your work at a specific point in time. It captures changes you've made to your code.
+
+Pull: Pulling synchronizes your local work with the online work on GitHub, such as when instructors add new files for your use.u to use).
+
+#### Creating your files 
+For each assignment, you'll make a new folder (or "directory") within the directory you're using for the quantitative biology course. You might name this "week-1" or "assignment-1", or you could name it with the actual task of the assignment (e.g., "wright-fisher"). From there, you'll create or add the files necessary for that assignment. Then you'll write your code and scripts, and upload or create any results output files as necessary. 
+
+For each assignment, you'll establish a new folder (or "directory") within your quantitative biology course directory. This new directory could be named by week (e.g., "week-1" or "assignment-1"), or with the specific task of the assignment (e.g., "wright-fisher"). Inside this directory, you'll create or add files essential for the assignment. Here, you'll develop code, scripts, and results output files as needed.
+
+#### Sending your files to GitHub
+When you've changed a file (maybe you've finished your script, or you've created a result file), you'll send it to GitHub. The pipeline you'll use is as follows: 
+
+1. `git add my_file.txt` 
+This command informs Git to start tracking your file. This step is essential for making the file visible on GitHub. You'll execute this whenever you make changes to a file. You'll do this each time you make a change to the file (so you might find yourself adding `my_file.txt` multiple times while you're working on an assignment). 
+
+2. `git commit -m "informative message here"`
+Creating a "commit" is like generating a receipt for your change. The message you provide explains the change for future reference. The `-m` flag creates the message, which you then fill within quotes.
+It's recommended to keep each commit focused on one significant change; this is called an [atomic commit](https://dev.to/samuelfaure/how-atomic-git-commits-dramatically-increased-my-productivity-and-will-increase-yours-too-4a84#:~:text=What's%20an%20atomic%20git%20commit,code%20change%20doesn't%20matter.). A change can affect a single file (so you might only `git add` one file) or it can contain multiple files, as long as the files were all relating to one change. For example, if you change the way you did an analysis in `myscript.py`, and that generates two new results files, `results.txt` and `results.img`, you can `git add` all three of those files and then commit them with one single commit. 
+
+3. `git push`
+This action uploads your commits to GitHub. You can observe the updated files on the GitHub repository page.
+
+### Learning more 
+While this class introduces GitHub in a simplified manner, real-world usage often involves more intricate collaborative techniques, including "branches." A branch is a distinct workspace within GitHub. In this class, you'll commit and push changes directly to the default branch (often called the "main" branch). Collaborative coding environments employ branching for each update. Developers then use a "pull request" to ask colleagues for review before merging changes into the main branch. You can delve deeper into GitHub by exploring [this](https://docs.github.com/en/get-started/quickstart/hello-world) guide and other online resources.
+
+If you're familiar with GitHub, feel free to continue your workflow, just keep your TA informed. If you're new but curious, let your TA know, and we'll explore potential workshops outside of class later in the semester.

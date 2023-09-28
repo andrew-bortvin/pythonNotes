@@ -1,0 +1,79 @@
+```{r, include = FALSE}
+ottrpal::set_knitr_image_path()
+```
+
+## Modifying Lists Through Loops
+
+Consider the following code block: 
+
+```{r, engine='python'}
+years = [1346, 1665, 1855]
+
+for i in years:
+  i = i - 5
+
+print(years)
+```
+
+Notice that running this code block **does not change the underlying list**. When you run this for loop, the following happens:
+
+1. `i` is set equal to the value of the corresponding value from `years`
+2. We subtract 5 from `i` and update the value of `i`
+3. We **do not** do anything with this updated `i` - the original list, `years`, is not modified
+
+What if we want to loop through years and update each vallue in the process. There are two ways of doing this: 
+
+### Appending to an empty list
+
+One way is to loop through your list, update each value, and then add it to the end of a new list. Look at the code below. 
+
+```{r, engine='python'}
+years = [1346, 1665, 1855]
+updatedYears = [] # Initialize a new list to store updated values
+
+for i in years:
+  i = i - 5
+  updatedYears.append(i) # Add updated value to the end of your new list
+
+print(updatedYears)
+```
+
+Here is how the `for` loop works:
+
+1. `i` is set equal to the value of the corresponding value from `years`
+2. We subtract 5 from `i` and update the value of `i`
+3. **We save this new value of `i` by adding it in to a new list**
+
+At the end of this loop, we have two lists: 
+
+1. `years`, which contains original values
+2. `updatedYears`, which contains updated values (original values - 5)
+
+### Looping through indices 
+
+Another way to update these values is to assign them back into the original list using the following syntax: 
+
+```{r, engine='python', eval=FALSE}
+years[<index>] = <new value>
+```
+
+For this, we need to iterate through the **indices** of `years`. 
+
+```{r, engine='python'}
+years = [1346, 1665, 1855]
+
+for i in range(len(years)): # Loop through the positions of years 
+  newValue = years[i] - 5 # Extract the appropriate value from years and subtract 5 from it, storing it as a new variable
+  years[i] = newValue # Add updated value back into years
+  
+print(years)
+```
+
+Breaking this down: 
+
+1. We loop through a range from 0 to the length of `years`. I.e. here, we would loop through the values `0`, `1`, `2`
+2. We extract the value from years at our current position using `years[i]`
+3. We update this value by subtracting 5 from it. Updated value is saved as `newValue`
+4. We add this new value **back into `years` at the original position** 
+
+At the end of this loop, we have one list, `years`, which no longer contains its initial values. `years` now contains our updated values. 

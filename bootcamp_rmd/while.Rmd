@@ -1,0 +1,52 @@
+```{r, include = FALSE}
+ottrpal::set_knitr_image_path()
+```
+
+## While Loops 
+
+Like a `for` loop, a `while` loop is a way of repeatedly performing an action. However, whereas a `for` loop runs a code block a set number of times, a `while` loop runs the block until a specific condition is met. 
+
+A `while` loop is structured like this:
+
+```
+while <condition>:
+    {do something}
+```
+
+The condition can be any expression that can be evaluated as a Boolean (`True` or `False`) - in particular the comparison operators (`==`, `<`, `>`, etc.) are often used here. For example: 
+
+```{r, engine='python', eval=FALSE}
+myString = "A"
+
+while len(myString) <= 10:
+  myString = myString + "AAAA"
+  print(myString)
+```
+
+### Infinite Loops
+
+Because a `while` loop runs an undetermined number times, a common error is an infinite loop, or a `while` loop that never stops running because the condition for termination is never met. Consider the following block of code: 
+
+```{r, engine='python', eval=FALSE}
+myNumber = 1 
+
+while myNumber > 0:
+  myNumber = myNumber + 1
+  print(myNumber)
+```
+
+Here, the number starts at 1 (which is greater than 0) and only ever grows larger. The statement `myNumber > 0` will remain true with every iteration of the loop, and the loop will never terminate, preventing your code from fully executing.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

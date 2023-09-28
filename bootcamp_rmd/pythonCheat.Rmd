@@ -1,0 +1,71 @@
+```{r, include = FALSE}
+ottrpal::set_knitr_image_path()
+```
+
+# Python Cheat Sheet  
+
+### Mathematics
+
+* `+` and `-`: addition and subtraction
+* `*` and `/`: multiplication and division
+* `//`: floor division
+* `**`: exponentials
+
+### Common Python Functions
+* `print()`: print a string to screen
+* `type()`: return the data type of an object
+
+### Comparisons 
+
+* `<` and `>`: greater than, less than
+* `<=` and `>=`: greater than or equal to, less than or equal to
+
+### String Methods 
+
+* `.upper()` and `.lower()`: Convert string to upper or lower case 
+* `.split()`: Split a string on a delimiter into a list
+* `.join()`: Convert a list into a string using a delimiter
+* `.rstrip()`, `.lstrip()`, and `.strip()`: Remove unwanted characters from the right side, left side, or both sides of a string
+
+### Type Conversion
+
+* `float()`: Convert data to float
+* `int()`: Convert data to an integer
+* `str()`: Convert data to a string
+
+### Working with Files 
+
+* `open(file, mode)`: Most common modes are: (`r`), write (`w`), append (`a`)
+* `.readlines()`: Return a list where each element is a line from the input file
+* `.close()`: Close the file
+
+### List methods
+
+* `.append()`: Add an element to the end of a list
+
+### `Numpy`  
+
+* `loadtxt()`: Import a file 
+* `array.shape`: Return the number of rows and columns of a `numpy` array object 
+* `np.mean()`: Return the mean of an array. Can use the `axis` argument for row and column means
+* `np.std()`: Return the standard deviation of an array. Can use the `axis` argument for row and column standard deviations
+* `np.max()`: Return the maximum value of an array. Can be used with `axis`
+* `np.min()`: Return the minimum value of an array. Can be used with `axis`
+
+### Plotting
+
+*  `plt.subplots()`: Initialize a figure with at least one subplot
+* `.scatter()`: Create a scatter plot
+* `.plot()`: Create a line plot
+* `.hist()`: Create a histogram
+* `.legend()`: Add a legend to your figure
+* `.set_xlabel()` and `ax.set_ylabel()`: Set x and y labels for a subplot
+* `.set_title()`: Set a title for a subplot
+* `.set_xlim()` and `.set_ylim()`: Set x and y limits for a subplot
+* `plt.show()`: Display plot 
+
+
+
+
+
+
