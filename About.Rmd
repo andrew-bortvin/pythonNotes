@@ -59,6 +59,7 @@ devtools::session_info()
 
 For JHU courses, You will need to add Ira as a credit:
 
+
 |Content Publisher|[Ira Gooding]|
 ...
 [Ira Gooding]: https://publichealth.jhu.edu/faculty/4130/ira-gooding
