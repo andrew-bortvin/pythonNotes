@@ -15,3 +15,17 @@ output:
 # Course Resources 
 
 This site offers code examples for the content covered in Computational Approaches to Population Genetics.   
+
+#### **Site Organization**
+
+Chapter 2: 
+
+A list of all Python commands seen in class; updated throughout the semester
+
+Chapter 3: 
+
+Detailed notes on Python syntax and functionality
+
+Chapter 4: 
+
+An introduction to the general way that we will be organizing and manipulating repositories on Git
