@@ -1,5 +1,4 @@
 course-resources
-site-organization
 python-cheat-sheet
 mathematics
 common-python-functions
