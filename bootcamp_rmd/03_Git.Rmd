@@ -51,4 +51,3 @@ This action uploads your commits to GitHub. You can observe the updated files on
 While this class introduces GitHub in a simplified manner, real-world usage often involves more intricate collaborative techniques, including "branches." A branch is a distinct workspace within GitHub. In this class, you'll commit and push changes directly to the default branch (often called the "main" branch). Collaborative coding environments employ branching for each update. Developers then use a "pull request" to ask colleagues for review before merging changes into the main branch. You can delve deeper into GitHub by exploring [this](https://docs.github.com/en/get-started/quickstart/hello-world) guide and other online resources.
 
 If you're familiar with GitHub, feel free to continue your workflow, just keep your TA informed. If you're new but curious, let your TA know, and we'll explore potential workshops outside of class later in the semester.
-
