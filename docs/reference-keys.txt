@@ -1,4 +1,4 @@
-available-course-formats
+course-resources
 python-cheat-sheet
 mathematics
 common-python-functions
